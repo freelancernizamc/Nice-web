@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-menu > li > a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.2rem;
+    padding-top: 0.8rem;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #5568d3;
+    min-width: 200px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #4a5bb8;
+    padding-left: 2rem;
+}
+
+/* Content Section */
+.content {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        transform: none;
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+    }
+
+    .nav-menu a,
+    .dropdown-menu a {
+        padding: 0.75rem 1rem;
+    }
+}
